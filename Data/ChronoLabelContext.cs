@@ -4,13 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ChronoLabel.Models;
 
-public partial class ChronolabelContext : DbContext
+public partial class ChronoLabelContext : DbContext
 {
-    public ChronolabelContext()
+    private readonly IConfiguration _configuration;
+    public ChronoLabelContext(DbContextOptions<ChronoLabelContext> options, IConfiguration configuration)
+        : base(options)
     {
+        _configuration = configuration;
     }
 
-    public ChronolabelContext(DbContextOptions<ChronolabelContext> options)
+    public ChronoLabelContext(DbContextOptions<ChronoLabelContext> options)
         : base(options)
     {
     }
@@ -22,8 +25,7 @@ public partial class ChronolabelContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("Server=localhost;Database=chronolabel;User=root;Password=Luis003z#;");
+        => optionsBuilder.UseMySQL(_configuration.GetConnectionString("ChronoLabelDb"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
