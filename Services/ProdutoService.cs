@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using ChronoLabelApp.Models;
-using ChronoLabelApp.Repositories;
+using ChronoLabel.Models;
+using ChronoLabel.Repositories;
 
-namespace ChronoLabelApp.Services
+namespace ChronoLabel.Services
 {
     public class ProdutoService
     {
@@ -18,7 +18,7 @@ namespace ChronoLabelApp.Services
             return _produtoRepository.GetAllProdutos();
         }
 
-        public Produto GetProdutoById(int id)
+        public Produto GetProdutoById(string id)
         {
             return _produtoRepository.GetProdutoById(id);
         }
@@ -33,12 +33,12 @@ namespace ChronoLabelApp.Services
             _produtoRepository.AtualizarProduto(produto);
         }
 
-        public void DeletarProduto(int id)
+        public void DeletarProduto(string id)
         {
             _produtoRepository.DeletarProduto(id);
         }
 
-        public bool ProdutoExists(int id)
+        public bool ProdutoExists(string id)
         {
             return _produtoRepository.ProdutoExists(id);
         }
@@ -48,10 +48,10 @@ namespace ChronoLabelApp.Services
             return _produtoRepository.SearchProdutos(nome, id);
         }
 
-        public IEnumerable<Produto> GetProdutosByNome(string nome)
+        /*public IEnumerable<Produto> GetProdutosByNome(string nome)
         {
             return _produtoRepository.GetProdutosByNome(nome);
-        }
+        }*/
 
     }
 }

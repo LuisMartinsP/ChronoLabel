@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using ChronoLabelApp.Models;
-using ChronoLabelApp.Data;
+using ChronoLabel.Models;
+using ChronoLabel.Data;
 
-namespace ChronoLabelApp.Repositories
+namespace ChronoLabel.Repositories
 {
     public class RelatorioRepository
     {

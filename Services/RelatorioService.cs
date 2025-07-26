@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using ChronoLabelApp.Repositories;
-using ChronoLabelApp.Models;
+using ChronoLabel.Repositories;
+using ChronoLabel.Models;
 
-namespace ChronoLabelApp.Services
+namespace ChronoLabel.Services
 {
     public class RelatorioService
     {
@@ -43,30 +43,30 @@ namespace ChronoLabelApp.Services
             return _relatorioRepository.RelatorioExists(id);
         }
 
-        public IEnumerable<Relatorio> SearchRelatorios(string cpfUsuario = null, string idProduto = null)
+        /*public IEnumerable<Relatorio> SearchRelatorios(string cpfUsuario = null, string idProduto = null)
         {
             return _relatorioRepository.SearchRelatorios(cpfUsuario, idProduto);
-        }
+        }*/
 
-        public IEnumerable<Relatorio> GetRelatoriosByCpfUsuario(string cpfUsuario)
+        /*public IEnumerable<Relatorio> GetRelatoriosByCpfUsuario(string cpfUsuario)
         {
             return _relatorioRepository.GetRelatoriosByCpfUsuario(cpfUsuario);
-        }
+        }*/
 
-        public IEnumerable<Relatorio> GetRelatoriosByIdProduto(int idProduto)
+        /*public IEnumerable<Relatorio> GetRelatoriosByIdProduto(string idProduto)
         {
             return _relatorioRepository.GetRelatoriosByIdProduto(idProduto);
-        }
+        }*/
 
-        public IEnumerable<Relatorio> GetRelatoriosByNomeProduto(string nomeProduto)
+        /*public IEnumerable<Relatorio> GetRelatoriosByNomeProduto(string nomeProduto)
         {
             return _relatorioRepository.GetRelatoriosByNomeProduto(nomeProduto);
-        }
+        }*/
 
-        public IEnumerable<Relatorio> GetRelatoriosByNomeUsuario(string nomeUsuario)
+        /*public IEnumerable<Relatorio> GetRelatoriosByNomeUsuario(string nomeUsuario)
         {
             return _relatorioRepository.GetRelatoriosByNomeUsuario(nomeUsuario);
-        }
+        }*/
 
         /*public IEnumerable<Relatorio> GetRelatoriosByData(DateTime data)
         {
@@ -75,7 +75,7 @@ namespace ChronoLabelApp.Services
 
         public IEnumerable<Relatorio> GetRelatoriosByPeriodo(DateTime dataInicio, DateTime dataFim)
         {
-            return _relatorioRepository.GetRelatoriosByPeriodo(dataInicio, dataFim);
+            return _relatorioRepository.GetRelatoriosByDateRange(dataInicio, dataFim);
         }
 
         /*public IEnumerable<Relatorio> GetRelatoriosByUsuarioAndProduto(string cpfUsuario, int idProduto)

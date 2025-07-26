@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using ChronoLabelApp.Models;
-using ChronoLabelApp.Repositories;
+using ChronoLabel.Models;
+using ChronoLabel.Repositories;
 
-namespace ChronoLabelApp.Services
+namespace ChronoLabel.Services
 {
     public class UsuarioService
     {
-        private readonly UsuarioRepository _usuarioRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public UsuarioService(UsuarioRepository usuarioRepository)
+        public UsuarioService(IUsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
         }
@@ -44,9 +44,9 @@ namespace ChronoLabelApp.Services
         {
             return _usuarioRepository.SearchUsuarios(nome, cpf);
         }
-        public IEnumerable<Usuario> GetUsuariosByNome(string nome)
+        /*public IEnumerable<Usuario> GetUsuariosByNome(string nome)
         {
             return _usuarioRepository.GetUsuariosByNome(nome);
-        }
+        }*/
     }
 }

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using ChronoLabelApp.Data;
-using ChronoLabelApp.Models;
+using ChronoLabel.Data;
+using ChronoLabel.Models;
 
-namespace ChronoLabelApp.Repositories
+namespace ChronoLabel.Repositories
 {
     public class ProdutoRepository
     {
@@ -22,7 +22,7 @@ namespace ChronoLabelApp.Repositories
                 .ToList();
         }
 
-        public Produto GetProdutoById(int id)
+        public Produto GetProdutoById(string id)
         {
             return _context.Produtos
                 .Include(p => p.Relatorios)
@@ -40,7 +40,7 @@ namespace ChronoLabelApp.Repositories
             _context.SaveChanges();
         }
 
-        public void DeletarProduto(int id)
+        public void DeletarProduto(string id)
         {
             var produto = _context.Produtos.Find(id);
             if (produto != null)
@@ -50,7 +50,7 @@ namespace ChronoLabelApp.Repositories
             }
         }
 
-        public bool ProdutoExists(int id)
+        public bool ProdutoExists(string id)
         {
             return _context.Produtos.Any(p => p.IdProduto == id);
         }

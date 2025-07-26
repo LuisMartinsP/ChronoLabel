@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using ChronoLabel.Models;
 
-namespace ChronoLabel.Models;
+namespace ChronoLabel.Data;
 
 public partial class ChronoLabelContext : DbContext
 {
@@ -23,9 +25,6 @@ public partial class ChronoLabelContext : DbContext
     public virtual DbSet<Relatorio> Relatorios { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL(_configuration.GetConnectionString("ChronoLabelDb"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

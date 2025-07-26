@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using ChronoLabelApp.Data;
-using ChronoLabelApp.Models;
+using ChronoLabel.Data;
+using ChronoLabel.Models;
 
-namespace ChronoLabelApp.Repositories
+namespace ChronoLabel.Repositories
 {
-    public class UsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private readonly ChronoLabelContext _context;
         public UsuarioRepository(ChronoLabelContext context)
