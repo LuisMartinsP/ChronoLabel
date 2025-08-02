@@ -14,12 +14,6 @@ public partial class ChronoLabelContext : DbContext
     {
         _configuration = configuration;
     }
-
-    public ChronoLabelContext(DbContextOptions<ChronoLabelContext> options)
-        : base(options)
-    {
-    }
-
     public virtual DbSet<Produto> Produtos { get; set; }
 
     public virtual DbSet<Relatorio> Relatorios { get; set; }

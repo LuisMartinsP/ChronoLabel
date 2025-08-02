@@ -19,7 +19,7 @@ namespace ChronoLabel.Services
             return _relatorioRepository.GetAllRelatorios();
         }
 
-        public Relatorio GetRelatorioById(int id)
+        public Relatorio? GetRelatorioById(int id)
         {
             return _relatorioRepository.GetRelatorioById(id);
         }

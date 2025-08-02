@@ -24,7 +24,7 @@ namespace ChronoLabel.Repositories
                            .ToList();
         }
 
-        public Relatorio GetRelatorioById(int id)
+        public Relatorio? GetRelatorioById(int id)
         {
             return _context.Relatorios
                            .Include(r => r.CpfUsuarioNavigation)

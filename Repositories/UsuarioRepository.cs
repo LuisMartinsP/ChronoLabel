@@ -21,7 +21,7 @@ namespace ChronoLabel.Repositories
                            .ToList();
         }
 
-        public Usuario GetUsuarioByCpf(string cpf)
+        public Usuario? GetUsuarioByCpf(string cpf)
         {
             return _context.Usuarios
                            .Include(u => u.Relatorios)

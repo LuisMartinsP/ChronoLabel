@@ -15,8 +15,8 @@ namespace ChronoLabel
 {
     public partial class App : Application
     {
-        public IServiceProvider ServiceProvider { get; private set; }
-        public IConfiguration Configuration { get; private set; }
+        public IServiceProvider? ServiceProvider { get; private set; }
+        public IConfiguration? Configuration { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {

@@ -17,7 +17,7 @@ namespace ChronoLabel.Services
         {
             return _usuarioRepository.GetAllUsuarios();
         }
-        public Usuario GetUsuarioByCpf(string cpf)
+        public Usuario? GetUsuarioByCpf(string cpf)
         {
             return _usuarioRepository.GetUsuarioByCpf(cpf);
         }

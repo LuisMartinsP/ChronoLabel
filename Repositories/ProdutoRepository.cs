@@ -23,7 +23,7 @@ namespace ChronoLabel.Repositories
                 .ToList();
         }
 
-        public Produto GetProdutoById(string id)
+        public Produto? GetProdutoById(string id)
         {
             return _context.Produtos
                 .Include(p => p.Relatorios)

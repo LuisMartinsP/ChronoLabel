@@ -7,7 +7,7 @@ namespace ChronoLabel.Repositories
     public interface IUsuarioRepository
     {
         IEnumerable<Usuario> GetAllUsuarios();
-        Usuario GetUsuarioByCpf(string cpf);
+        Usuario? GetUsuarioByCpf(string cpf);
         void AddUsuario(Usuario usuario);
         void UpdateUsuario(Usuario usuario);
         void DeleteUsuario(string cpf);

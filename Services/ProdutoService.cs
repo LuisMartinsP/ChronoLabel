@@ -19,7 +19,7 @@ namespace ChronoLabel.Services
             return _produtoRepository.GetAllProdutos();
         }
 
-        public Produto GetProdutoById(string id)
+        public Produto? GetProdutoById(string id)
         {
             return _produtoRepository.GetProdutoById(id);
         }
