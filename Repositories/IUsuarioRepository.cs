@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChronoLabel.Models;
 
@@ -11,6 +12,6 @@ namespace ChronoLabel.Repositories
         void UpdateUsuario(Usuario usuario);
         void DeleteUsuario(string cpf);
         bool UsuarioExists(string cpf);
-        IEnumerable<Usuario> SearchUsuarios(string nome = null, string cpf = null);
+        IEnumerable<Usuario> SearchUsuarios(string? nome = null, string? cpf = null);
     }
 }

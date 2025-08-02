@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -54,7 +55,7 @@ namespace ChronoLabel.Repositories
             return _context.Usuarios.Any(u => u.Cpf == cpf);
         }
 
-        public IEnumerable<Usuario> SearchUsuarios(string nome = null, string cpf = null)
+        public IEnumerable<Usuario> SearchUsuarios(string? nome = null, string? cpf = null)
         {
             var query = _context.Usuarios.AsQueryable();
 

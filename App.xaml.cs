@@ -34,7 +34,7 @@ namespace ChronoLabel
 
             // 3. Registra seu DbContext passando a connection string lida do appsettings.json
             serviceCollection.AddDbContext<ChronoLabelContext>(options =>
-                options.UseMySQL(Configuration.GetConnectionString("ChronoLabelDb")));
+                options.UseMySql(Configuration.GetConnectionString("ChronoLabelDb"), ServerVersion.AutoDetect(Configuration.GetConnectionString("ChronoLabelDb"))));
 
             // (Opcional) registra outros serviços e repositórios aqui
 

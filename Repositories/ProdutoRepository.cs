@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -55,7 +56,7 @@ namespace ChronoLabel.Repositories
             return _context.Produtos.Any(p => p.IdProduto == id);
         }
 
-        public IEnumerable<Produto> SearchProdutos(string nome = null, string id = null)
+        public IEnumerable<Produto> SearchProdutos(string? nome = null, string? id = null)
         {
             var query = _context.Produtos.AsQueryable();
             if (!string.IsNullOrEmpty(nome))

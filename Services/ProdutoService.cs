@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChronoLabel.Models;
 using ChronoLabel.Repositories;
@@ -43,7 +44,7 @@ namespace ChronoLabel.Services
             return _produtoRepository.ProdutoExists(id);
         }
 
-        public IEnumerable<Produto> SearchProdutos(string nome = null, string id = null)
+        public IEnumerable<Produto> SearchProdutos(string? nome = null, string? id = null)
         {
             return _produtoRepository.SearchProdutos(nome, id);
         }

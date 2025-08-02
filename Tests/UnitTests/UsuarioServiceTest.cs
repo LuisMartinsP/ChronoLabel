@@ -1,5 +1,6 @@
 using Xunit;
 using Moq;
+using System.Linq;
 using ChronoLabel.Services;
 using ChronoLabel.Repositories;
 using ChronoLabel.Models;

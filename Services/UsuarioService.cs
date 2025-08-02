@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ChronoLabel.Models;
 using ChronoLabel.Repositories;
@@ -40,7 +41,7 @@ namespace ChronoLabel.Services
             return _usuarioRepository.UsuarioExists(cpf);
         }
 
-        public IEnumerable<Usuario> SearchUsuarios(string nome = null, string cpf = null)
+        public IEnumerable<Usuario> SearchUsuarios(string? nome = null, string? cpf = null)
         {
             return _usuarioRepository.SearchUsuarios(nome, cpf);
         }
