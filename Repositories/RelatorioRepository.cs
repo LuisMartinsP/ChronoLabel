@@ -92,7 +92,7 @@ namespace ChronoLabel.Repositories
             }
         }
 
-        public int GetQuantidadeDeProdutosPorUsuario(string cpfUsuario, DateTime? startDate = null, DateTime? endDate = null)
+        public int GetQuantidadeDeProdutosByUsuarioAndDataRange(string cpfUsuario, DateTime? startDate = null, DateTime? endDate = null)
         {
             var query = _context.Relatorios.Where(r => r.CpfUsuario == cpfUsuario);
 
