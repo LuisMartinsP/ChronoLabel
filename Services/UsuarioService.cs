@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ChronoLabel.Models;
 using ChronoLabel.Repositories;
 using DocumentValidator;
+using BCrypt.Net;
 
 namespace ChronoLabel.Services
 {
@@ -36,7 +37,7 @@ namespace ChronoLabel.Services
 
             if (string.IsNullOrWhiteSpace(usuario.Cpf) ||
             string.IsNullOrWhiteSpace(usuario.Nome) ||
-            string.IsNullOrWhiteSpace(usuario.Senha) ||
+            string.IsNullOrWhiteSpace(usuario.SenhaPlainText) ||
             string.IsNullOrWhiteSpace(usuario.Tipo))
             {
                 throw new ArgumentException("Todos os campos do usuário são obrigatórios.");
@@ -46,6 +47,8 @@ namespace ChronoLabel.Services
             {
                 throw new InvalidOperationException("Já existe um usuário com esse CPF.");
             }
+
+            usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaPlainText);
             _usuarioRepository.AddUsuario(usuario);
         }
 
@@ -68,9 +71,9 @@ namespace ChronoLabel.Services
                 existingUsuario.Nome = usuario.Nome;
             }
 
-            if (!string.IsNullOrWhiteSpace(usuario.Senha))
+            if (!string.IsNullOrWhiteSpace(usuario.SenhaPlainText))
             {
-                existingUsuario.Senha = usuario.Senha;
+                existingUsuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaPlainText);
             }
 
             if (!string.IsNullOrWhiteSpace(usuario.Tipo))

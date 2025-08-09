@@ -8,11 +8,10 @@ namespace ChronoLabel.Data;
 
 public partial class ChronoLabelContext : DbContext
 {
-    private readonly IConfiguration _configuration;
-    public ChronoLabelContext(DbContextOptions<ChronoLabelContext> options, IConfiguration configuration)
+    private readonly IConfiguration? _configuration;
+    public ChronoLabelContext(DbContextOptions<ChronoLabelContext> options)
         : base(options)
     {
-        _configuration = configuration;
     }
     public virtual DbSet<Produto> Produtos { get; set; }
 
@@ -87,7 +86,8 @@ public partial class ChronoLabelContext : DbContext
                 .HasColumnName("nome");
             entity.Property(e => e.Senha)
                 .HasMaxLength(60)
-                .HasColumnName("senha");
+                .HasColumnName("senha")
+                .IsRequired();
             entity.Property(e => e.Tipo)
                 .HasColumnType("enum('operador','administrador')")
                 .HasColumnName("tipo");

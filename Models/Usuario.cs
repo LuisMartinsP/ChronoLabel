@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChronoLabel.Models;
 
@@ -14,4 +15,7 @@ public partial class Usuario
     public string Tipo { get; set; } = null!;
 
     public virtual ICollection<Relatorio> Relatorios { get; set; } = new List<Relatorio>();
+
+    [NotMapped]
+    public string? SenhaPlainText { set; get; }
 }
